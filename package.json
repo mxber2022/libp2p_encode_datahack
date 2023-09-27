@@ -1,7 +1,7 @@
 {
-  "name": "js-libp2p-webrtc-private-to-private",
+  "name": "IMG",
   "version": "1.0.0",
-  "description": "Connect a browser to another browser",
+  "description": "Image sharing",
   "type": "module",
   "scripts": {
     "start": "vite",
