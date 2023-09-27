@@ -42,6 +42,7 @@ Follow these steps to get started with the project:
 3. **Run the Application**: Start the application using the following command:
 
    ```
+   npm run relay
    npm start
    ```
 
