@@ -42,10 +42,6 @@ const node = await createLibp2p({
   streamMuxers: [mplex()],
   connectionGater: {
     denyDialMultiaddr: () => {
-      // by default we refuse to dial local addresses from the browser since they
-      // are usually sent by remote peers broadcasting undialable multiaddrs but
-      // here we are explicitly connecting to a local node so do not deny dialing
-      // any discovered address
       return false
     }
   },
@@ -56,7 +52,6 @@ const node = await createLibp2p({
 
 await node.start()
 
-// handle the echo protocol
 await node.handle("/echo/1.0.0", ({ stream }) => {
   pipe(
     stream,
@@ -97,7 +92,6 @@ await node.handle("/echo/1.0.0", ({ stream }) => {
 })
 
 function updateConnList() {
-  // Update connections list
   const connListEls = node.getConnections()
     .map((connection) => {
       if (connection.remoteAddr.protoCodes().includes(WEBRTC_CODE)) {
@@ -119,7 +113,6 @@ node.addEventListener("connection:close", (event) => {
 })
 
 node.addEventListener("self:peer:update", (event) => {
-  // Update multiaddrs list
   const multiaddrs = node.getMultiaddrs()
     .map((ma) => {
       const el = document.createElement("li")
