@@ -46,9 +46,11 @@ Follow these steps to get started with the project:
    npm start
    ```
 
-4. **Access the Web Interface**: Open your web browser and go to `http://localhost:3000` to access the image sharing interface.
+4. **Access the Web Interface**: Open your web browser and go to `http://localhost:5173/` to access the image sharing interface.
 
 ## Usage
+
+- **Connect relay server**: Use the web interface to enter multiaddress from relay server and click connect
 
 - **Upload Images**: Use the web interface to upload image files that you want to share. These images will be stored locally and made available for sharing with other peers.
 
